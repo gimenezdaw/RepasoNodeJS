@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="/public/css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div align="center">
+        <img src="/public/imgs/carrera.png" />
+    </div>
+    <p><a href="/">Página de inicio</a></p>
+
+
+
+    <%
+    if (participantes._id == null) {
+    %>
+
+        <p>PARTICIPANTE NO ENCONTRADO!!!
+        </p>
+
+        <% } else { %>
+            <h1>Ficha de participante</h1>
+            <table border="1">
+                <tr>
+                    <th>DORSAL</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDOS</th>
+                    <th>POBLACION</th>
+                    <th>CLUB</th>
+                </tr>
+                <tr>
+
+                    <td>
+                        <%=participantes.dorsal%>
+                    </td>
+                    <td>
+                        <%=participantes.nombre%>
+                    </td>
+                    <td>
+                        <%=participantes.apellidos%>
+                    </td>
+                    <td>
+                        <%=participantes.poblacion%>
+                    </td>
+                    <td>
+                        <%=participantes.club%>
+                    </td>
+                </tr>
+
+            </table>
+            <%
+    };
+    %>
+
+</body>
+
+</html>

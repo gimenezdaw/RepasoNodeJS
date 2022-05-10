@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="/public/css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div align="center">
+        <img src="/public/imgs/carrera.png" />
+    </div>
+    <h2><a href="/buscar">Buscar</a></h2>
+
+    <h1>Listado de contactos</h1>
+
+    <%if (participantes.length == 0) {%>
+
+        <p>No se han encontrado participantes que mostrar</p>
+
+        <%} else {%>
+            <table border="1">
+                <tr>
+                    <th>DORSAL</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDOS</th>
+                    <th>POBLACION</th>
+                    <th>CLUB</th>
+                    <th>EDITAR</th>
+                    <th>BORRAR</th>
+                </tr>
+                <%participantes.forEach(participante => {%>
+                    <tr>
+                        <td>
+                            <%=participante.dorsal%>
+                        </td>
+                        <td>
+                            <%=participante.nombre%>
+                        </td>
+                        <td>
+                            <%=participante.apellidos%>
+                        </td>
+                        <td>
+                            <%=participante.poblacion%>
+                        </td>
+                        <td>
+                            <%=participante.club%>
+                        </td>
+                        <td>
+                            <a href="/show"><img src="/public/imgs/edit.png" alt=""></a>
+                        </td>
+                        <td>
+                            <a href="/show"><img src="/public/imgs/delete.png" alt=""></a>
+                        </td>
+                    </tr>
+                    <%});%>
+            </table>
+            <%
+}
+%>
+</body>
+
+</html>
