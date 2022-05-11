@@ -29,19 +29,21 @@ router.get('/buscar', (req, res) => {
 router.get('/show', (req, res) => {
     Participante.find().then(resultado => {
         res.render('show', {
-            participantes: resultado
+            participante: resultado
         });
     }).catch(error => {
-        res.render('show', { participantes: [] });
+        res.render('show', { participante: [] });
     })
 });
 
-router.get('/show:id', (req, res) => {
+router.get('/show/:id', (req, res) => {
+    console.log('id=' + req.params.id);
     Participante.findById(req.params.id).then(resultado => {
-        res.render('show', { participantes: resultado });
+        if (resultado) res.render('show', { participante: resultado });
+        else res.render('show', { participante: [] })
 
     }).catch(error => {
-        res.render('show', { participantes: [] });
+        res.render('show', { participante: [] });
     });
 });
 

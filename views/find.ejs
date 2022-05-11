@@ -16,10 +16,10 @@
 
         <%} else {%>
 
-            <form method="GET" action="/show">
+            <form method="GET" action="/show/">
                 <select name="id" id="id">
             <%participantes.forEach(participante => {%>
-                <option value="<%=participante.id%>">
+                <option value="<%=participante._id%>">
                     <%=participante.apellidos%>, <%=participante.nombre%>
                 </option>
             <%});%>

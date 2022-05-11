@@ -11,10 +11,8 @@
     </div>
     <p><a href="/">Página de inicio</a></p>
 
-
-
     <%
-    if (participantes._id == null) {
+    if (participante == null) {
     %>
 
         <p>PARTICIPANTE NO ENCONTRADO!!!
@@ -33,19 +31,19 @@
                 <tr>
 
                     <td>
-                        <%=participantes.dorsal%>
+                        <%=participante.dorsal%>
                     </td>
                     <td>
-                        <%=participantes.nombre%>
+                        <%=participante.nombre%>
                     </td>
                     <td>
-                        <%=participantes.apellidos%>
+                        <%=participante.apellidos%>
                     </td>
                     <td>
-                        <%=participantes.poblacion%>
+                        <%=participante.poblacion%>
                     </td>
                     <td>
-                        <%=participantes.club%>
+                        <%=participante.club%>
                     </td>
                 </tr>
 
